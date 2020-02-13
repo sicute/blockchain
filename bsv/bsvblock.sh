@@ -3,6 +3,6 @@ a=$(bitcoinsv-cli -conf=/mnt/bsv/conf/bsv.conf getblockchaininfo | grep "blocks"
 sleep 5
 b=$(curl -s https://api.whatsonchain.com/v1/bsv/main/chain/info | jq '.blocks' | awk 'gsub(/\,$/,X)1{ print "{\"text\":\"BSV Mainnet: "$1"\"}"}')
 sleep 5
-curl -X POST -d "$a" https://hooks.slack.com/services/xxx
+curl -X POST -d "$a" https://hooks.slack.com/services/
 sleep 5
-curl -X POST -d "$b" https://hooks.slack.com/services/xxxx
+curl -X POST -d "$b" https://hooks.slack.com/services/
