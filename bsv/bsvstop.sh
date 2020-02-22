@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-bsv_pid=$(pgrep bitcoinsvd)
+bsv_pid=$(pgrep -f bitcoinsvd)
 echo "Found bitcoin SV  pid: [${bsv_pid}]"
 
 if [ -n "$(ps -p ${bsv_pid} -o pid=)" ]; then
